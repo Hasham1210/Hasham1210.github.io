@@ -1,0 +1,69 @@
+.name {
+    font-style: italic;
+    background-color: rgba(128, 128, 128, 0.678);
+    font-style: italic;
+}
+
+
+body {
+    background-color: rgba(128, 128, 128, 0.518);
+}
+
+.courses {
+    background-color: gray;
+}
+
+.pics {
+    background-color: gray;
+}
+
+.hbs {
+    background-color: gray;
+}
+
+.per {
+    background-color: rgba(128, 128, 128, 0.545);
+}
+
+.edu {
+    background-color: gray;
+}
+
+/* h3,
+h4 {
+    background-color: lightcoral;
+} */
+p::first-line {
+    text-decoration: underline;
+}
+ 
+
+h4 {
+    color: black;
+}
+
+a {
+    color: red;
+    text-decoration: none;
+}
+
+a:hover {
+    color: burlywood;
+}
+
+a:active {
+    background-color: brown;
+}
+
+ 
+
+h1+h2 {
+    /* font-style: italic; */
+}
+
+.imgs {
+    color: brown;
+}
+img{
+    width: 166px;
+}
