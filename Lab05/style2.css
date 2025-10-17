@@ -1,0 +1,108 @@
+
+
+body {
+  background-color: rgba(128, 128, 128, 0.52);
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  margin: 20px;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 2em;
+  color: rgb(200, 25, 25);
+  border-bottom: 2px solid #555;
+  padding-bottom: 6px;
+}
+
+h2 {
+  color: rgb(50, 80, 120);
+  margin-top: 15px;
+}
+
+h4 {
+  color: black;
+  margin-top: 10px;
+}
+
+.name {
+  font-style: italic;
+  background-color: rgba(128, 128, 128, 0.68);
+  border: 1px solid #444;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.courses,
+.pics,
+.hbs,
+.edu {
+  background-color: #b0b0b0;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.per {
+  background-color: rgba(128, 128, 128, 0.55);
+  padding: 8px;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 12px;
+  padding-left: 8px;
+  border-left: 3px solid rgb(25, 131, 173);
+}
+
+p::first-line {
+  text-decoration: underline;
+}
+
+p::first-letter {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+a {
+  color: red;
+  text-decoration: none;
+}
+
+a:hover {
+  color: burlywood;
+}
+
+a:active {
+  background-color: brown;
+}
+
+a:visited {
+  color: purple;
+}
+
+img {
+  width: 160px;
+  height: auto;
+  border: 4px solid rgba(0, 0, 0, 0.3);
+  margin: 6px;
+}
+
+.imgs {
+  color: brown;
+}
+
+ul {
+  list-style-type: square;
+  margin-left: 20px;
+  padding-left: 15px;
+}
+
+h1 + h2 {
+  font-style: italic;
+}
+
+div > p {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 4px;
+}
