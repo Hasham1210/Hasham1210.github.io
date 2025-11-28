@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form</title>
+</head>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let form = document.querySelector("form");
+    
+         
+        function makeRed(field) { field.style.background = "red"; }
+        function makeWhite(field) { field.style.background = "white"; }
+    
+        function validateField(field) {
+            let name = field.name;
+    
+             
+            if (name === "fullname") {
+                if (!/^[A-Za-z ]+$/.test(field.value.trim())) makeRed(field);
+                else makeWhite(field);
+            }
+    
+             if (name === "email") {
+                if (!field.value.includes("@") || !field.value.includes(".com")) makeRed(field);
+                else makeWhite(field);
+            }
+    
+             if (name === "phone") {
+                if (!/^[0-9]{11}$/.test(field.value.trim())) makeRed(field);
+                else makeWhite(field);
+            }
+    
+             if (name === "age") {
+                let val = parseInt(field.value);
+                if (!val || val < 1 || val > 130) makeRed(field);
+                else makeWhite(field);
+            }
+    
+             if (name === "nationality") {
+                if (field.value === "") makeRed(field);//IF EMPTY!
+                else makeWhite(field);
+            }
+    
+             if (name === "address") {
+                if (field.value.trim() === "") makeRed(field);
+                else makeWhite(field);
+            }
+        }
+    
+         
+        form.querySelectorAll("input, select, textarea").forEach(field => {
+            field.addEventListener("input", () => validateField(field));
+            field.addEventListener("change", () => validateField(field));  
+        });
+    
+         
+        form.addEventListener("submit", function(e) {
+            let isValid = true;
+    
+            form.querySelectorAll("input, select, textarea").forEach(field => {
+                validateField(field);
+                if (field.style.background === "red") isValid = false;
+            });
+    
+             let genderSelected = false;
+            document.querySelectorAll("input[name='gender']").forEach(g => {
+                if (g.checked) genderSelected = true;
+            });
+            if (!genderSelected) {
+                alert("Please select a gender.");
+                isValid = false;
+            }
+    
+            if (!isValid) e.preventDefault();
+        });
+    });
+    </script>
+    
+
+
+<body>
+
+
+
+
+
+
+
+
+    <h2>Enter you data please..</h2>
+
+    <form>
+
+        <label>Name:</label><br>
+        <input type="text" name="fullname" ><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" ><br><br>
+
+        <label>Phone Number:</label><br>
+        <input type="tel" name="phone" ><br><br>
+
+        <label>Age:</label><br>
+        <input type="number" name="age" min="1" max="120" ><br><br>
+
+        <label>Nationality:</label><br>
+        <select name="nationality" >
+            <option value="">Select</option>
+            <option value="Pakistani">Pakistani</option>
+            <option value="Indian">Indian</option>
+            <option value="American">American</option>
+            <option value="British">British</option>
+            <option value="Other">Other</option>
+        </select><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <input type="radio" name="gender" value="Other"> Other
+        <br><br>
+
+        <label>Address:</label><br>
+        <textarea name="address"></textarea><br><br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+</body>
+</html>
